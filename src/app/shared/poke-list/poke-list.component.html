@@ -1,14 +1,17 @@
-<a class="pokemon">
-  <section class="pokemon_status">
-    <h2>Pokaralho </h2>
+<ng-template ngFor let-pokemon [ngForOf]="allPokemons">
+  <a class="pokemon">
+    <section class="pokemon_status">
+      <h2>{{ pokemon.name }}</h2>
 
-    <ul>
-      <li>Grass</li>
-      <li>Poison</li>
-    </ul>
-  </section>
+      <ul>
+        <li *ngFor="let item of pokemon?.status?.abilities; let i = index">
+          {{ item.ability.name }}
+        </li>
+      </ul>
+    </section>
 
-  <section class="pokemon_image">
-    <img src="../../../assets/pkm.png" alt="pokemon">
-  </section>
-</a>
+    <section class="pokemon_image">
+      <img src="../../../assets/pkm.png" alt="pokemon" />
+    </section>
+  </a>
+</ng-template>
