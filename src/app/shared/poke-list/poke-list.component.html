@@ -1,17 +1,24 @@
-<ng-template ngFor let-pokemon [ngForOf]="allPokemons">
-  <a class="pokemon" *ngIf="pokemon.status">
-    <section class="pokemon_status">
-      <h2>{{ pokemon.name }}</h2>
+<app-poke-search (emitSearch)="search($event)"></app-poke-search>
 
-      <ul>
-        <li *ngFor="let item of pokemon.status.types; let i = index">
-          {{ item.type.name }}
-        </li>
-      </ul>
-    </section>
+<section class="listagem">
+  <ng-template ngFor let-pokemon [ngForOf]="allPokemons">
+    <a class="pokemon" *ngIf="pokemon.status">
+      <section class="pokemon_status">
+        <h2>{{ pokemon.name }}</h2>
 
-    <section class="pokemon_image">
-      <img [src]="pokemon.status.sprites.other.dream_world.front_default" alt="pokemon" />
-    </section>
-  </a>
-</ng-template>
+        <ul>
+          <li *ngFor="let item of pokemon.status.types; let i = index">
+            {{ item.type.name }}
+          </li>
+        </ul>
+      </section>
+
+      <section class="pokemon_image">
+        <img
+          [src]="pokemon.status.sprites.other.dream_world.front_default"
+          alt="pokemon"
+        />
+      </section>
+    </a>
+  </ng-template>
+</section>

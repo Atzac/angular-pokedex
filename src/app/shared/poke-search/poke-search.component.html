@@ -1,5 +1,5 @@
 <form>
-  <input type="text" placeholder="Pesquisar pokemon" />
+  <input type="text" placeholder="Pesquisar pokemon" #input (keyup)="search(input.value)" />
   <div>
     <img src="../../../assets/Srch.svg" alt="srch" />
   </div>
