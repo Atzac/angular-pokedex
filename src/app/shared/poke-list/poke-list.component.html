@@ -2,7 +2,7 @@
 
 <section class="listagem">
   <ng-template ngFor let-pokemon [ngForOf]="allPokemons">
-    <a class="pokemon" *ngIf="pokemon.status">
+    <a class="pokemon" *ngIf="pokemon.status" [routerLink]="['details', pokemon.status.id]">
       <section class="pokemon_status">
         <h2>{{ pokemon.name }}</h2>
 
